@@ -115,10 +115,10 @@ ${baiduUrl ? `
 > \`![](${imageUrl})\`
 
 _💡 点击链接可直接复制对应内容_`;
-
             // 使用 Markdown 格式发送消息
             await sendTelegramMessage(c.env.TG_BOT_TOKEN, chatId, messageText, 'MarkdownV2');
-
+            await sendTelegramMessage(c.env.TG_BOT_TOKEN, chatId, imageUrl, 'HTML');
+            
             return c.json({ success: true });
         } catch (error) {
             console.error('Telegram webhook error:', error);
